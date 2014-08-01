@@ -11,6 +11,10 @@
 					</small>
 					<% } %>
 				</legend>
+				<div class="progress progress-striped" style="border-radius:0; margin:0; position: relative;height:23px;">
+					<div class="bar" style="width: <%= this.details.percent||'' %>%;"></div>
+					<div style="position: absolute; top:3px;left:0;right:0;bottom:3px; text-align: center; background-color: rgba(250,250,250,0.7); " class="s"><%= this.details.percent||'' %>%</div>
+				</div>
 				<table class="table">
 					<tr>
 						<th style="width: 30%;" class="r">Total Tickets:</th>
@@ -20,7 +24,7 @@
 					</tr>
 
 				</table>
-
+				
 			
 
 
@@ -106,10 +110,14 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="prizePercent">Prize Percent</label>
+				<label class="control-label" for="target">Target</label>
 
 				<div class="controls">
-					<input type="text" id="prizePercent" name="prizePercent" placeholder="%" value="<%= this.prizePercent||'' %>">
+					<div class="input-prepend input-append">
+						<span class="add-on">R</span>
+						<input type="text" id="target" name="target" placeholder="Target" value="<%= this.target||'' %>" class="span2">
+					</div>
+					
 				</div>
 			</div>
 

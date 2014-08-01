@@ -17,14 +17,14 @@ class draws extends _ {
 
 		$values = array(
 			"label" => isset($_POST['label']) ? $_POST['label'] : "",
-			"prizePercent" => isset($_POST['prizePercent']) ? $_POST['prizePercent'] : "",
+			"target" => isset($_POST['target']) ? $_POST['target'] : "",
 			"locationID" => $user['location']['ID'],
 
 		);
 
 		$errors = array(
 			"label"=>"Required",
-			"prizePercent"=>"Required",
+			"target"=>"Required",
 		);
 
 		foreach ($errors as $k=>$v)if (!$values[$k]) $error[$k] = $v;

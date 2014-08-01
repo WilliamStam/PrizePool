@@ -31,7 +31,7 @@ class user extends _ {
 	function user($ID){
 		$timer = new timer();
 		$return = $this->get($ID);
-		
+		unset($return['password']);
 
 		if ($return['ID']){
 			$userLocations = $return['locations'];
@@ -59,11 +59,10 @@ class user extends _ {
 			
 			if (isset($return['draw']['ID']) && $return['draw']['ID']){
 				$return['draw']['totals'] = sales::getTotals("draws.ID='".$return['draw']['ID']."'");
-				$return['draw']['prize'] = "";
-				if ($return['draw']['prizePercent'] && $return['draw']['totals']['val_tickets']){
-					
-					$return['draw']['prize'] = number_format($return['draw']['totals']['val_tickets'] * ($return['draw']['prizePercent'] / 100),2,"."," ");
+				if (isset($return['draw']['totals']['val_tickets'])&&$return['draw']['totals']['val_tickets']){
+					$return['draw']['percent'] = ($return['draw']['totals']['val_tickets'] / $return['draw']['target'])*100;
 				}
+				
 				
 			}
 

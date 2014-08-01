@@ -35,14 +35,14 @@ class draws extends _ {
 		$result['totals'] = models\sales::getTotals("draws.ID = '".$details['ID']."'");
 
 		if (isset($result['details']['ID']) && $result['details']['ID']){
-
-			$result['details']['prize'] = "";
-			if ($result['details']['prizePercent'] && $result['totals']['val_tickets']){
-
-				$result['details']['prize'] = number_format($result['totals']['val_tickets'] * ($result['details']['prizePercent'] / 100),2,"."," ");
+			if (isset($result['totals']['val_tickets'])&&$result['totals']['val_tickets']){
+				$result['details']['percent'] = ($result['totals']['val_tickets'] / $result['details']['target'])*100;
 			}
 
+
 		}
+		
+		
 		
 		
 

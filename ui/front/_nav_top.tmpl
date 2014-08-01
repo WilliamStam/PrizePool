@@ -6,19 +6,19 @@
 				<li {% if page['section']=="capture" %}class="active"{% endif %}><a href="/capture">Capture</a></li>
 				<li {% if page['section']=="draws" %}class="active"{% endif %}><a href="/draws">Draws</a></li>
 				<li {% if page['section']=="members" %}class="active"{% endif %}><a href="/members">Members</a></li>
-				<li {% if page['section']=="locations" %}class="active"{% endif %}><a href="/locations">Locations</a></li>
 
 
-				<li class="divider-vertical"></li>
-				<li style="width:265px; " id="navbar-info" >
-					
+
+				<li class="divider-vertical" style="margin-left:60px;"></li>
+				<li style="width:285px; position: relative;" id="navbar-info" >
+
 
 				</li>
 				<li class="divider-vertical" style="margin-right:0;"></li>
 			</ul>
 			<ul class="nav pull-right">
-				
-				<li class="dropdown" style="width:140px; margin-left:10px;">
+			
+				<li class="dropdown" style="width:160px;">
 					<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
 						{{ _user['location']['label'] }}
 						<b class="caret pull-right"></b>
