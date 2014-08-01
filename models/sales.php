@@ -93,7 +93,7 @@ class sales extends _ {
 
 
 		$result = $f3->get("DB")->exec("
-			SELECT sum(sales.num_tickets) as num_tickets, sum(sales.val_tickets) as val_tickets
+			SELECT count(sales.memberID) as members, sum(sales.num_tickets) as num_tickets, sum(sales.val_tickets) as val_tickets
 			FROM (sales INNER JOIN draws ON sales.drawID = draws.ID)
 			$where
 			$orderby

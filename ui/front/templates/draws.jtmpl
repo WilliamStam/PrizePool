@@ -9,9 +9,9 @@
 				<table class="table">
 					<tr>
 						<th style="width: 30%;" class="r">Total Tickets:</th>
-						<td style="width: 10%;"><%= this.totals.num_tickets||'' %></td>
-						<th style="width: 35%;" class="r">Total Value:</th>
-						<td style="width: 25%;">R <%= this.totals.val_tickets||'' %></td>
+						<td style="width: 20%;"><%= this.totals.num_tickets||'' %> (<%= this.totals.members||'' %>)</td>
+						<th style="width: 30%;" class="r">Total Value:</th>
+						<td style="width: 20%;">R <%= this.totals.val_tickets||'' %></td>
 					</tr>
 
 				</table>
