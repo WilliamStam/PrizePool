@@ -5,7 +5,7 @@
 
 			<fieldset>
 				<legend><%= this.details.label %> <% if (this.details.winner) { %>	<% } else { %> <small class="pull-right">
-						<button class="btn btn-link span1 btn-draw-form" data-id="<%= this.details.ID %>" ><i class="icon-pencil"></i></button></small> <% } %></legend>
+						<button class="btn btn-link span1 btn-draw-form" data-id="<%= this.details.ID %>" ><i class="icon-pencil g"></i></button></small> <% } %></legend>
 				<table class="table">
 					<tr>
 						<th style="width: 30%;" class="r">Total Tickets:</th>
