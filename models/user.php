@@ -50,11 +50,20 @@ class user extends _ {
 			$return['location'] = $location;
 			$return['locations'] = $locations;
 
+			$return['draw'] = array();
 			$return['draws'] = draws::getAll("locationID='".$location['ID']."' AND winnerID is NULL","datein ASC");
-			$return['draw'] = $return['draws'][0];
+			if (isset( $return['draws'][0]['ID'])){
+				$return['draw'] = $return['draws'][0];
+			}
 			
-			if ($return['draw']['ID']){
+			
+			if (isset($return['draw']['ID']) && $return['draw']['ID']){
 				$return['draw']['totals'] = sales::getTotals("draws.ID='".$return['draw']['ID']."'");
+				$return['draw']['prize'] = "";
+				if ($return['draw']['prizePercent'] && $return['draw']['totals']['val_tickets']){
+					
+					$return['draw']['prize'] = number_format($return['draw']['totals']['val_tickets'] * ($return['draw']['prizePercent'] / 100),2,"."," ");
+				}
 				
 			}
 

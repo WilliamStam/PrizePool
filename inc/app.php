@@ -69,6 +69,7 @@ class app {
 			"time" => $pageTime,
 			"size" => ($pageSize)
 		);
+		$GLOBALS["output"]['user'] = $f3->get("user");
 		//test_array($f3->get("__runTemplate"));
 
 		if ($f3->get("__noPageEnd")){

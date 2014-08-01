@@ -84,8 +84,8 @@ function updatetimerlist(d, page_size) {
 	var data = d['timer'];
 	var page = d['page'];
 	var models = d['models'];
-
-//console.log(models)
+//console.log(d['user'])
+	$("#navbar-info").jqotesub($("#template-navbar-info"), d['user']);
 
 	var pageSize = (page && page['size']) ? page['size'] : page_size;
 

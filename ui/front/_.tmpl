@@ -81,6 +81,17 @@
 {% include 'templates/template.jtmpl' ignore missing %}
 
 
+<script type="text/x-jqote-template" id="template-navbar-info">
+	<![CDATA[
+	<div style="" class="dg s">
+		<h4 style="margin:0; padding-top:11px;"><span  data-toggle="tooltip" title="Current Draw" data-placement="bottom" rel="tooltip"><%= this.draw.label %></span>
+			<span class="pull-right" style="text-shadow: 1px 1px 0 #fff; color:#ff0000;" data-toggle="tooltip" title="Current Prize Pool Amount" data-placement="bottom" rel="tooltip">R <%= this.draw.prize %></span></h4>
+
+
+	</div>
+	]]>
+</script>
+
 
 <div id='systemTimers-container' class='modal hide fade'>
 	<div class='modal-header'><a href='#' class='close' data-dismiss="modal">&times;</a>
