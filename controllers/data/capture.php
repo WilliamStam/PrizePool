@@ -31,6 +31,7 @@ class capture extends _ {
 		
 		
 		$result['member'] = $member;
+		$result['totals'] = models\sales::getTotals("memberID='".$member['ID']."' AND draws.locationID='".$user['location']['ID']."'");
 
 
 		return $GLOBALS["output"]['data'] = $result;

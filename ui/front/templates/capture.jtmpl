@@ -44,6 +44,25 @@
 					</div>
 				</fieldset>
 				<fieldset>
+					<legend style="border-bottom:none; margin-bottom:0;">Summary</legend>
+					<table class="table table-condensed table-bordered">
+						
+
+						<tbody>
+						<tr>
+							<th>Saved Up:</th>
+							<td>R <%= this.totals.val_tickets %></td>
+						</tr>
+						<tr>
+							<th>Tickets Bought:</th>
+							<td><%= this.totals.num_tickets %></td>
+						</tr>
+						</tbody>
+
+					</table>
+					
+				</fieldset>
+				<fieldset>
 					<legend>History</legend>
 					<table class="table table-condensed">
 						<thead>
