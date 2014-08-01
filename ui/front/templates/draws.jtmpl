@@ -4,7 +4,8 @@
 		<div class="span8">
 
 			<fieldset>
-				<legend><%= this.details.label %></legend>
+				<legend><%= this.details.label %> <% if (this.details.winner) { %>	<% } else { %> <small class="pull-right">
+						<button class="btn btn-link span1 btn-draw-form" data-id="<%= this.details.ID %>" ><i class="icon-pencil"></i></button></small> <% } %></legend>
 				<table class="table">
 					<tr>
 						<th style="width: 30%;" class="r">Total Tickets:</th>
@@ -92,6 +93,7 @@
 			</div>
 		</div>
 		<div class="modal-footer">
+			<input type="hidden" id="ID" name="ID" value="<%= this.ID||'' %>"  />
 			<a href="#" class="btn btn-link" data-dismiss="modal" aria-hidden="true">Cancel</a>
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</div>

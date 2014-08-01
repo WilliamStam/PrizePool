@@ -67,7 +67,7 @@ $(document).ready(function(){
 		var $this = $(this);
 		var data = $this.serialize();
 
-		var ID = $.bbq.getState("ID");
+		var ID = $("#form-draw-form #ID").val();
 		$(".loadingmask").show();
 		$.post("/save/draws/form/?ID=" + ID, data, function (r) {
 			r = r['data'];
