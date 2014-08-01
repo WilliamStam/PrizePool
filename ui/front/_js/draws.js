@@ -12,18 +12,6 @@ $(document).ready(function(){
 		loadPage();
 		
 	});
-	$(document).on("click",".btn-draw-form",function(e){
-		var $this = $(this);
-		e.preventDefault();
-		
-		$.getData("/data/draws/form?ID="+$this.attr("data-id"), {}, function (data) {
-			var $modal = $("#modal-draw-form");
-			
-			$modal.jqotesub($("#template-form-draw"), data).modal("show");
-			
-		});
-		
-	});
 	
 	
 	
@@ -53,6 +41,53 @@ $(document).ready(function(){
 				
 				$this.find("button[type='submit']").addClass("btn-danger");
 				$(".loadingmask").fadeOut();
+			
+				
+			}
+
+		});
+		return false;
+	});
+	$(document).on("click",".btn-draw-form",function(e){
+		var $this = $(this);
+		e.preventDefault();
+
+		$.getData("/data/draws/form?ID="+$this.attr("data-id"), {}, function (data) {
+			var $modal = $("#modal-draw-form");
+
+			$modal.jqotesub($("#template-form-draw"), data).modal("show");
+			$(".loadingmask").fadeOut();
+		});
+
+	});
+
+
+	$(document).on("submit", "#form-draw-form", function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var data = $this.serialize();
+
+		var ID = $.bbq.getState("ID");
+		$(".loadingmask").show();
+		$.post("/save/draws/form/?ID=" + ID, data, function (r) {
+			r = r['data'];
+			if ($.isEmptyObject(r['error'])) {
+				$("#modal-draw-form").modal("hide");
+				loadPage();
+				//alert("Successfully Captured!")
+
+			} else {
+				//var result = $.parseJSON(r.error);
+				$.each(r.error, function(k, v) {
+					$("#"+k,$this).after('<div class="help-inline error-text">'+v+'</div>').closest(".control-group").addClass("error");
+				});
+				
+				
+				
+				$this.find("button[type='submit']").addClass("btn-danger");
+				$(".loadingmask").fadeOut();
+				
+				
 			
 				
 			}

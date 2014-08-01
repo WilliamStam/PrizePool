@@ -9900,7 +9900,7 @@ span.highlight {
   left: 0;
   right: 0;
   display: block;
-  z-index: 590;
+  z-index: 5900;
 }
 .loadingmask.round {
   background: rgba(250, 250, 250, 0.7) url(/ui/_images/loading-small.gif) no-repeat center center;
