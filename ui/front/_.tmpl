@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" id="page_html_tag"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" id="page_html_tag"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" id="page_html_tag"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" id="page_html_tag"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{% include template_from_string(page['title']) %}</title>
+	
+	
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/ui/_css/style.css">
+
+	<script src="/ui/_js/libs/modernizr.js"></script>
+	{% for row in page['css'] %}
+		<link rel="stylesheet" href="{{ row }}">
+	{% endfor %}
+	{% if page['template_css'] %}
+		<link rel="stylesheet" href="{{ page['template_css'] }}">
+	{% endif %}
+	
+	<!-- main_inline_css -->
+
+</head>
+<body >
+<div id="top"></div>
+<!--[if lt IE 7]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please
+	<a href="http://browsehappy.com/">upgrade your browser</a> or
+	<a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.
+</p><![endif]-->
+
+
+<!-- Navbar
+================================================== -->
+{% if page['template']!="login.tmpl" %}
+{% include "_nav_top.tmpl" ignore missing %}
+{% endif %}
+<!-- content
+================================================== -->
+<section class="container" id="page-content" style="">
+
+	{% include page['template'] ignore missing %}
+
+
+</section>
+
+<!-- Footer
+================================================== -->
+{% include "_nav_footer.tmpl" ignore missing %}
+
+
+
+<script src="/ui/_js/libs/jquery.{{ _v }}.js"></script>
+<script src="/ui/_js/libs/bootstrap.{{ _v }}.js"></script>
+<script src="/min/javascript.{{ _v }}.js"></script>
+<script src="/ui/_js/plugins/jquery.mjs.nestedSortable.{{ _v }}.js"></script>
+
+{% for row in page['js'] %}
+<script src="{{ row }}"></script>
+{% endfor %}
+{% if page['template_js'] %}
+	<script src="{{ page['template_js'] }}"></script>
+{% endif %}
+{% if page['javascript'] %}
+	<script type="text/javascript">{{ page['javascript']|raw }}</script>
+{% endif %}
+
+<!-- main_inline_js -->
+
+{% if page['template_jtmpl'] %}
+	{% include page['template_jtmpl'] %}
+{% endif %}
+
+{% include 'templates/template.jtmpl' ignore missing %}
+
+
+
+<div id='systemTimers-container' class='modal hide fade'>
+	<div class='modal-header'><a href='#' class='close' data-dismiss="modal">&times;</a>
+
+		<h3>Debug</h3></div>
+	<div class='modal-body'>
+		<article>
+			<table id='systemTimers' class="table table-condensed">
+
+			</table>
+		</article>
+	</div>
+	<div class='modal-footer'>
+
+	</div>
+</div>
+
+<!--timer_list-->
+</body>
+</html>

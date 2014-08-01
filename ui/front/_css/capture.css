@@ -1,0 +1,12 @@
+.ui-slider-horizontal {
+  height: 12px;
+  margin-top: 8px;
+}
+.ui-slider .ui-slider-handle {
+  height: 18px;
+  width: 5px;
+  padding-left: 5px;
+}
+#totalValue {
+  font-size: 40px;
+}

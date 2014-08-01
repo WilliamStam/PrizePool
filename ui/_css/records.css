@@ -1,0 +1,28 @@
+table.records .record.highlight {
+  background-color: #ccffff;
+}
+table.records .record.error {
+  background-color: #ffe6e6;
+}
+table.records .record.active {
+  background-color: #DEEBFF;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(250, 250, 250, 0.25);
+  color: #444;
+}
+table.records .record:hover {
+  background-color: #DEEBFF;
+  color: #000;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+table.records .record.active td,
+table.records .record:hover td {
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.75);
+}
+table.records .no-records {
+  padding: 30px !important;
+  text-align: center !important;
+  margin-right: 20px !important;
+  border: none !important;
+}

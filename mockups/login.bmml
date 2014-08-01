@@ -1,0 +1,33 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="1100" measuredH="787" mockupW="1100" mockupH="787">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1100" h="787" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Please%20Login%0Ahttp%3A//%3Curl%3E/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="285" y="265" w="530" h="-1" measuredW="232" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>Please%20Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="255" y="235" w="590" h="286" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="402" y="349" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Username%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="407" y="391" w="-1" h="-1" measuredW="59" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Password%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="740" y="473" w="84" h="24" measuredW="62" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sign%20in</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="479" y="348" w="280" h="-1" measuredW="79" measuredH="23" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="479" y="390" w="280" h="-1" measuredW="79" measuredH="23" zOrder="7" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>

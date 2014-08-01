@@ -1,0 +1,124 @@
+<script type="text/x-jqote-template" id="template-search">
+	<![CDATA[
+
+	<form class="form-horizontal" id="form-search">
+
+		<fieldset>
+			<legend>Search</legend>
+			<div class="control-group">
+				<label class="control-label" for="phone">Phone Number:</label>
+
+				<div class="controls">
+					<input type="text" id="phone" name="phone" placeholder="Phone Number" class="span4">
+					<button class="btn " type="submit" style="margin-left:10px;">Go!</button>
+				</div>
+			</div>
+		</fieldset>
+
+	</form>
+	]]>
+</script>
+
+<script type="text/x-jqote-template" id="template-record">
+	<![CDATA[
+
+	<form class="form-horizontal" id="form-record">
+		<div class="row">
+			<div class="span8">
+				<fieldset>
+					<legend>Member Details</legend>
+
+					<div class="control-group">
+						<label class="control-label" for="fullname">Full Name:</label>
+
+						<div class="controls">
+							<input type="text" id="fullname" name="fullname" placeholder="Name" class="span4" value="<%= this.member.fullname||'' %>">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="phone">Phone Number:</label>
+
+						<div class="controls">
+							<input type="text" id="phone" name="phone" placeholder="Phone Number" class="span4" value="<%= this.member.phone||'' %>">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>History</legend>
+					<table class="table table-condensed">
+						<thead>
+						<tr>
+							<th>Draw</th>
+							<th>Date</th>
+							<th colspan="2">Bought</th>
+						</tr>
+						</thead>
+
+						<tbody>
+						<% for (var i in this.member.history) { %>
+						<tr>
+							<td><%= this.member.history[i].drawName %></td>
+							<td><%= this.member.history[i].datein %></td>
+							<td class="c span1"><%= this.member.history[i].num_tickets %> </td>
+							<td><em class="pull-right">(R <%= this.member.history[i].val_tickets %>)</em></td>
+						</tr>
+						<% } %>
+						</tbody>
+
+					</table>
+				</fieldset>
+			</div>
+			<div class="span8">
+				<fieldset>
+					<legend>Ticket Purchase - {{ _user['draw']['label'] }}</legend>
+					
+					<div class="row">
+						<button type="button" class="span1 btn change-num-tickets" data-val="-1"><i class="icon-circle-arrow-left"></i></button>
+						<div class="span6"><div id="slider"></div></div>
+						<button type="button" class="span1 btn change-num-tickets" data-val="+1"><i class="icon-circle-arrow-right"></i></button>
+					</div>
+					<div class="clearfix"></div>
+					<div class="control-group" style="margin-top:30px;">
+						<label class="control-label" for="num_tickets">Number of tickets:</label>
+
+						<div class="controls">
+							<input type="text" id="num_tickets" name="num_tickets" placeholder="#" class="span1" value="">
+						</div>
+					</div>
+
+					<div class="control-group" style="margin-top:60px;" >
+						<label class="control-label">Total:</label>
+
+						<div class="controls">
+							<div id="totalValue"></div>
+						</div>
+					</div>
+				
+					
+
+				</fieldset>
+				
+
+			</div>
+		</div>
+
+
+
+		<div class="form-actions fixed">
+			<div class="container">
+				<div class="pull-left">
+
+				</div>
+				<div class="pull-right">
+					<% if (this.search){ %>
+
+					<button type="reset" class="btn btn-link span2">Reset</button>
+					<% } %>
+					<button data-loading-text="Saving..." style="width:150px;" class="btn btn-primary" type="submit">Submit</button>
+				</div>
+			</div>
+		</div>
+
+	</form>
+	]]>
+</script>
